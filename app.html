@@ -3,12 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f4f3ee">
+<meta name="theme-color" content="#f3e9d5">
 <meta name="description" content="Conheça o aplicativo Copiloto Financeiro, veja como começar e acesse a Google Play para baixar o app.">
 <title>App — Copiloto Financeiro</title>
 <style>
 :root{--paper:#f4f3ee;--ink:#24342b;--muted:#718078;--line:#dfe4dc;--green:#28634f;--green-dark:#214f40;--green-soft:#e8f1e9;--max:1040px}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em}.mark{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(145deg,#2f7258,#214f40);color:#fff;font-size:12px;font-weight:900}.brand>span:last-child{color:var(--green)}.brand>span:last-child span{color:var(--ink)}.nav-links{display:flex;gap:18px;color:var(--muted);font-size:13px;font-weight:650}.nav-links a:hover,.links a:hover{color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 17px;border-radius:11px;background:var(--green);color:#fff;font-weight:800;border:1px solid var(--green)}.btn.secondary{background:#fff;color:#3f5d4b;border-color:var(--line)}.hero{padding:58px 0 35px;max-width:760px}.eyebrow{display:inline-flex;padding:7px 10px;border-radius:999px;background:var(--green-soft);color:#3e6b52;font-size:10px;font-weight:850;letter-spacing:.12em}.hero h1{margin:15px 0 10px;font-size:clamp(36px,5vw,54px);line-height:1.05;letter-spacing:-.05em}.hero p{margin:0;color:var(--muted);font-size:16px}.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:20px 0 42px}.plan{padding:23px;border:1px solid var(--line);border-radius:15px;background:#fff;display:flex;flex-direction:column;min-height:355px}.plan h2{margin:0 0 5px;font-size:24px}.desc{margin:0;color:var(--muted);font-size:11.5px;line-height:1.6}.price{margin:18px 0 4px;color:var(--green);font-size:29px;font-weight:900;letter-spacing:-.04em}.price small{font-size:10px;color:var(--muted);font-weight:600}.limit{margin:12px 0;padding:8px 10px;border-radius:9px;background:#f0f3ed;color:#4f6656;font-size:10px;font-weight:800}.features{margin:0;padding:0;list-style:none;color:#526158;font-size:10.5px;display:grid;gap:7px}.features li:before{content:"✓";color:#2e865e;font-weight:900;margin-right:7px}.plan .btn{margin-top:auto}.note{padding:0 0 42px;color:#808a82;font-size:10.5px;line-height:1.6}.compare{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;margin-bottom:48px}.compare h2{margin:0 0 7px;font-size:20px}.compare p{margin:0 0 15px;color:var(--muted);font-size:12px}.footer{padding:25px 0 40px;color:#859087;font-size:10px}.links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}@media(max-width:760px){.wrap{width:min(100% - 20px,1040px)}.nav{padding:16px 0}.nav-links{display:none}.hero{padding:42px 0 25px}.hero h1{font-size:38px}.plans{grid-template-columns:1fr;padding-top:12px}.plan{min-height:0}.compare{padding:20px}}
+
+/* Refinamento visual — tipografia, proporção e hierarquia */
+:root{
+  --paper:#f3e9d5;
+  --surface:#fffdf8;
+  --ink:#24342b;
+  --muted:#657269;
+  --line:#ded7c8;
+  --green:#28634f;
+  --green-dark:#214f40;
+  --green-soft:#e6efe6;
+  --gold:#b28a4d;
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.7;
+}
+.wrap{width:min(var(--max),calc(100% - 40px))}
+.nav{padding:20px 0;border-bottom-color:#d8cfbf}
+.brand{font-size:15px}
+.nav-links{font-size:14px;gap:22px}
+.btn{min-height:46px;padding:12px 18px;border-radius:12px;font-size:14px}
+.btn.secondary{background:rgba(255,253,248,.9);border-color:#d8cfbf;color:var(--green-dark)}
+.hero{padding:72px 0 62px}
+.hero h1{
+  font-size:clamp(40px,5vw,60px);
+  line-height:1.04;
+  letter-spacing:-.045em;
+  font-weight:750;
+  color:var(--green-dark);
+}
+.hero p{font-size:17px;line-height:1.75;color:#5f6b63}
+.eyebrow{font-size:10px;letter-spacing:.13em;color:var(--green);background:#e4eddf}
+.section{padding:64px 0;border-top-color:#ded5c5}
+.section h2{
+  font-size:clamp(28px,3.4vw,36px);
+  line-height:1.12;
+  letter-spacing:-.035em;
+  font-weight:720;
+  color:var(--green-dark);
+}
+.section-head{margin-bottom:28px}
+.section-head p{font-size:16px;line-height:1.7;color:#657269}
+.card{
+  padding:26px;
+  border:1px solid #ded7c8;
+  border-radius:20px;
+  background:rgba(255,253,248,.92);
+  box-shadow:0 7px 24px rgba(76,63,39,.06);
+}
+.card:hover{
+  border-color:#c9d2c4;
+  box-shadow:0 16px 34px rgba(43,70,53,.11);
+}
+.card h3{font-size:17px;line-height:1.35;font-weight:700;color:var(--green-dark);margin:13px 0 7px}
+.card p{font-size:15px;line-height:1.7;color:#66736a}
+.icon{width:36px;height:36px;border-radius:11px;background:#eef2e9;border-color:#d8dfd2;color:var(--green)}
+.plan h3{font-weight:750}
+.plan p,.desc{font-size:14px;line-height:1.6}
+.price{font-size:31px}
+.features{font-size:13px;line-height:1.55}
+.limit{font-size:13px}
+.faq summary{font-size:15px;color:var(--green-dark)}
+.faq p{font-size:15px;line-height:1.7;color:#66736a}
+.footer{padding:34px 0 46px;font-size:13px;color:#6f7a71}
+.links{gap:18px}
+.gold-detail{color:var(--gold)}
+@media(max-width:640px){
+  .wrap{width:min(100% - 24px,var(--max))}
+  .nav{padding:16px 0}
+  .hero{padding:48px 0 44px}
+  .hero h1{font-size:38px;line-height:1.07}
+  .hero p{font-size:16px;line-height:1.7}
+  .section{padding:48px 0}
+  .section h2{font-size:29px}
+  .section-head p{font-size:15px}
+  .card{padding:21px}
+  .card h3{font-size:16px}
+  .card p{font-size:15px}
+  .faq p{font-size:15px}
+  .footer{font-size:13px}
+}
+
 </style>
 </head>
 <body><div class="wrap">
