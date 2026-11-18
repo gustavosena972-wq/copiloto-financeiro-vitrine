@@ -1,0 +1,6 @@
+# Copiloto Financeiro - vitrine
+User-agent: *
+Allow: /
+Disallow: /copiloto-financeiro-vitrine/layout-experimental.html
+
+Sitemap: https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/sitemap.xml
