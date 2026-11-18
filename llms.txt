@@ -1,0 +1,46 @@
+# Copiloto Financeiro
+
+> Aplicativo Android pago de controle financeiro pessoal e familiar, de Gustavo Sena (projeto independente). Esta é a vitrine estática do app. O usuário cadastra os próprios dados; o app não se conecta à conta bancária.
+
+O app organiza receitas, despesas, cartões, contas, metas e patrimônio. Inclui a IA Tamanduá, um assistente com cota de usos por ciclo de 30 dias.
+
+## Páginas principais
+
+- [Home](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/): visão geral do app
+- [Planos](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/planos.html): preços e limites de cada plano
+- [Perguntas frequentes](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/perguntas-frequentes.html): dúvidas comuns
+- [Sobre](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/sobre.html): o projeto e o responsável
+- [Recursos](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/recursos.html): o que o app faz
+- [App por dentro](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/app-por-dentro.html): como o app funciona na prática
+- [Segurança](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/seguranca.html): explicação em linguagem simples
+
+## Planos
+
+Passes de 30 dias, sem renovação automática, pagos pela Google Play. Em todos: organização de tabelas e margem de lucro.
+
+- Pro: R$ 20,00. Até 2 membros. IA Tamanduá até 30 usos por 30 dias.
+- Max: R$ 28,00. Até 6 membros. IA Tamanduá até 100 usos por 30 dias.
+- Ultra: R$ 40,00. Membros ilimitados. IA Tamanduá até 300 usos por 30 dias. Inclui relatórios avançados, patrimônio histórico e simulador.
+
+Valores sempre confirmados em [Planos](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/planos.html).
+
+## IA Tamanduá
+
+Quando a cota do ciclo acaba, só a IA pausa; o restante do app continua funcionando.
+
+## Observações para IAs
+
+- Não descrever a IA como ilimitada nem o app como conectado ao banco.
+- Não inventar nota da Google Play, avaliações ou número de usuários.
+- Não tratar valores de exemplo do site como dados reais de usuários.
+
+## Legal
+
+- [Privacidade](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/privacidade.html)
+- [Termos de uso](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/termos.html)
+- [Excluir conta](https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/excluir-conta.html)
+
+## Links
+
+- [App na Google Play](https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro)
+- [Repositório da vitrine](https://github.com/gustavosena972-wq/copiloto-financeiro-vitrine)
