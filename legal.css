@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Fraunces:opsz,wght@9..144,520;9..144,620&display=swap');
 
+/* ORGANIZAÇÃO DO CÓDIGO: variáveis globais do tema legal. */
 :root{
   color-scheme:dark;
   --paper:#0a0e22;
@@ -11,8 +12,10 @@
   --gold:#a78bfa;
   --line:rgba(180,170,255,.22);
 }
+/* ORGANIZAÇÃO DO CÓDIGO: reset e comportamento base. */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+/* ORGANIZAÇÃO DO CÓDIGO: aparência e tipografia das páginas legais. */
 body{
   margin:0;
   background:
@@ -25,6 +28,7 @@ body{
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
+/* ORGANIZAÇÃO DO CÓDIGO: largura e espaçamento do conteúdo jurídico. */
 main{width:min(900px,calc(100% - 36px));margin:0 auto;padding:52px 0 78px}
 .brand{
   display:inline-flex;align-items:center;
@@ -55,6 +59,7 @@ p,li{color:var(--muted)}
 a{color:var(--green);font-weight:600}
 a:hover{color:var(--green-dark)}
 .meta{font-size:14px;color:#9aa6c4}
+/* ORGANIZAÇÃO DO CÓDIGO: blocos de informação jurídica. */
 .panel{
   margin:23px 0;
   padding:23px 25px;
@@ -64,6 +69,7 @@ a:hover{color:var(--green-dark)}
   color:var(--ink);
 }
 .panel strong{color:var(--ink)}
+/* ORGANIZAÇÃO DO CÓDIGO: ações e links principais. */
 .action{
   display:inline-flex;
   align-items:center;
@@ -77,6 +83,7 @@ a:hover{color:var(--green-dark)}
   font-weight:700;
 }
 .action:hover{color:#061018}
+/* ORGANIZAÇÃO DO CÓDIGO: navegação complementar. */
 .nav{
   display:flex;
   gap:12px 20px;
@@ -85,6 +92,7 @@ a:hover{color:var(--green-dark)}
   padding-top:20px;
   border-top:1px solid var(--line);
 }
+/* ORGANIZAÇÃO DO CÓDIGO: avisos e observações importantes. */
 .note{
   margin-top:22px;
   padding:14px 16px;
@@ -94,6 +102,7 @@ a:hover{color:var(--green-dark)}
   background:rgba(124,92,255,.12);
   color:#ddd6fe;
 }
+/* ORGANIZAÇÃO DO CÓDIGO: ajustes responsivos. */
 @media(max-width:600px){
   main{width:min(100% - 24px,900px);padding:36px 0 55px}
   h1{font-size:35px}
