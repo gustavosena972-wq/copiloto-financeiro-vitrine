@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+<!-- ORGANIZAÇÃO DO CÓDIGO: metadados, SEO, identidade visual e recursos externos da página. -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0a0e22">
@@ -23,17 +24,21 @@
 </head>
 <body>
 <div class="wrap">
+<!-- ORGANIZAÇÃO DO CÓDIGO: navegação global e acesso às principais áreas da vitrine. -->
 <header class="nav">
 <a class="brand" href="index.html" aria-label="Copiloto Financeiro — início"><span class="mark">CF</span><span>Copiloto <span>Financeiro</span></span></a>
 <nav class="nav-links" aria-label="Navegação principal"><a href="index.html#recursos">Recursos</a><a href="index.html#seguranca">Segurança</a><a href="planos.html">Planos</a><a href="perguntas-frequentes.html">Central de dúvidas</a></nav>
 <a class="btn secondary" href="https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro">Google Play</a>
 </header>
+<!-- ORGANIZAÇÃO DO CÓDIGO: conteúdo principal exclusivo desta página. -->
 <main>
+<!-- ORGANIZAÇÃO DO CÓDIGO: seção hero; conteúdo e estrutura visual desta área. -->
 <section class="hero">
 <span class="eyebrow">CONHEÇA O APLICATIVO</span>
 <h1>Veja o Copiloto por dentro.</h1>
 <p>Explore as telas do aplicativo e entenda, de forma mais visual, como o Copiloto ajuda a organizar a vida financeira pessoal e familiar.</p>
 </section>
+<!-- ORGANIZAÇÃO DO CÓDIGO: seção section; conteúdo e estrutura visual desta área. -->
 <section class="section">
 <div class="section-head"><div><span class="eyebrow">TELAS DO APLICATIVO</span><h2>Uma visão mais próxima da experiência.</h2></div><p>Clique nas imagens para ampliar. As telas reais do aplicativo podem ser adicionadas aos espaços abaixo.</p></div>
 <div class="gallery">
@@ -47,10 +52,13 @@
 <div class="cta"><a class="btn secondary" href="index.html">Voltar para a vitrine</a><a class="btn" href="https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro">Conhecer no Google Play</a></div>
 </section>
 </main>
+<!-- ORGANIZAÇÃO DO CÓDIGO: rodapé e links institucionais da vitrine. -->
 <footer class="footer"><div class="links"><a href="index.html">Início</a><a href="perguntas-frequentes.html">Central de dúvidas</a><a href="privacidade.html">Privacidade</a><a href="termos.html">Termos</a><a href="excluir-conta.html">Excluir conta</a></div></footer>
 </div>
 <div class="modal" id="modal" aria-hidden="true"><div class="modal-box"><button class="close" aria-label="Fechar">×</button><img id="modal-img" alt=""></div></div>
+<!-- ORGANIZAÇÃO DO CÓDIGO: JavaScript responsável apenas pelas interações desta página. -->
 <script>
+// ORGANIZAÇÃO DO CÓDIGO: lógica de interação da página. Alterações aqui devem preservar a estrutura HTML.
 const modal=document.getElementById('modal'),modalImg=document.getElementById('modal-img');
 document.querySelectorAll('.media').forEach(card=>card.addEventListener('click',()=>{const src=card.dataset.modal;const img=card.querySelector('img');if(img&&img.naturalWidth){modalImg.src=src;modalImg.alt=img.alt;modal.classList.add('open');modal.setAttribute('aria-hidden','false')}}));
 document.querySelector('.close').addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
