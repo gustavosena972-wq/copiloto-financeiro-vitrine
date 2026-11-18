@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,620&family=Outfit:wght@400;500;600&display=swap');
 
-/* ORGANIZAÇÃO DO CÓDIGO: variáveis globais do tema. */
 :root{
   --bg:#0a0e22;
   --bg-2:#12152f;
@@ -23,10 +22,8 @@
   --ease-out:cubic-bezier(.22,1,.36,1);
 }
 
-/* ORGANIZAÇÃO DO CÓDIGO: reset e comportamento base. */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-/* ORGANIZAÇÃO DO CÓDIGO: aparência e tipografia base. */
 body{
   margin:0;
   background:
@@ -42,11 +39,9 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 a{color:inherit;text-decoration:none;transition:color .2s var(--ease-out)}
-button,/* ORGANIZAÇÃO DO CÓDIGO: botões e chamadas para ação. */
-.btn{cursor:pointer}
+button,.btn{cursor:pointer}
 .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
 
-/* ORGANIZAÇÃO DO CÓDIGO: navegação global. */
 .nav{
   min-height:84px;
   display:flex;
@@ -159,7 +154,6 @@ button,/* ORGANIZAÇÃO DO CÓDIGO: botões e chamadas para ação. */
   box-shadow:0 8px 24px rgba(80,40,160,.2);
 }
 
-/* ORGANIZAÇÃO DO CÓDIGO: apresentação principal. */
 .hero{
   position:relative;
   display:grid;
@@ -375,7 +369,6 @@ h1{
 }
 .mini-goal:hover .goal-line b{width:82%}
 
-/* ORGANIZAÇÃO DO CÓDIGO: seções e espaçamento. */
 .section{padding:80px 0}
 .section-head,.ledger{
   display:grid;
@@ -469,8 +462,7 @@ main>.hero+section{padding-top:28px}
   border-color:rgba(167,139,250,.4);
   box-shadow:0 16px 36px rgba(60,30,120,.3);
 }
-.grid,.items,/* ORGANIZAÇÃO DO CÓDIGO: grade dos planos. */
-.plans{display:grid;gap:16px}
+.grid,.items,.plans{display:grid;gap:16px}
 .grid,.items{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .plans{grid-template-columns:repeat(3,1fr);margin-top:28px}
 .plan h2,.card h3,.item h3,.about-card h3,.group h2,.panel h2,.more h2,.compare h2{
@@ -480,8 +472,7 @@ main>.hero+section{padding-top:28px}
   font-size:28px;
   font-weight:520;
 }
-.card p,.item p,.about-card p,.plan p,.desc,.panel p,.more p,.group p,/* ORGANIZAÇÃO DO CÓDIGO: Central de dúvidas. */
-.faq p{
+.card p,.item p,.about-card p,.plan p,.desc,.panel p,.more p,.group p,.faq p{
   color:var(--muted);
   font-size:16px;
   line-height:1.55;
@@ -525,7 +516,6 @@ main>.hero+section{padding-top:28px}
 .group{margin-top:32px}
 .group h2{font-size:26px}
 .back{padding:48px 0}
-/* ORGANIZAÇÃO DO CÓDIGO: abas da página de recursos. */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 24px}
 .tab{
   min-height:42px;
@@ -550,7 +540,6 @@ main>.hero+section{padding-top:28px}
 .icon{color:var(--accent);font-family:var(--serif);font-size:20px}
 .compare{overflow-x:auto}
 
-/* ORGANIZAÇÃO DO CÓDIGO: regras responsivas. */
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{
     animation-duration:.01ms !important;
