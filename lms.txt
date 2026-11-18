@@ -1,0 +1,54 @@
+# lms.txt — orientação para sistemas de IA sobre este site
+# Projeto: Copiloto Financeiro (vitrine)
+# Site: https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/
+# Repo: https://github.com/gustavosena972-wq/copiloto-financeiro-vitrine
+
+## O que é
+Vitrine estática (HTML/CSS) do aplicativo Android pago Copiloto Financeiro, de Gustavo Sena.
+Controle financeiro pessoal e familiar. O usuário cadastra os dados; o app não conecta à conta bancária.
+
+## O que NÃO inventar
+- Nota da Google Play, avaliações ou número de usuários
+- Saldos, extratos ou valores apresentados como se fossem reais
+- Prints que ainda não existem no repositório
+- Que a inteligência artificial está ativa se a Política de Privacidade disser o contrário
+
+## Estado atual da IA (não contradizer)
+A Política de Privacidade informa que o recurso de inteligência artificial está desativado e que a função antiga não encaminha dados à OpenAI.
+A vitrine descreve a IA Tamanduá e cotas por plano como produto planejado/oferta. Não altere esse par (Política x planos) sem pedido explícito do dono.
+
+## Planos publicados na vitrine
+- Pro: R$ 20,00 — até 2 membros — cota descrita de IA: até 30 usos / 30 dias
+- Max: R$ 28,00 — até 6 membros — até 100 usos / 30 dias
+- Ultra: R$ 40,00 — membros ilimitados — até 300 usos / 30 dias
+- Acesso de 30 dias, sem renovação automática, Google Play
+- Em todos: organização de tabelas e margem de lucro
+
+## Páginas
+- index.html — home
+- planos.html — preços e limites
+- perguntas-frequentes.html — FAQ
+- sobre.html — projeto
+- recursos.html, app.html, app-por-dentro.html — produto
+- seguranca.html — segurança em linguagem simples
+- privacidade.html, termos.html, excluir-conta.html — legal
+
+## Pode editar (vitrine)
+index.html, planos.html, perguntas-frequentes.html, sobre.html,
+recursos.html, app.html, app-por-dentro.html, seguranca.html, style.css, legal.css
+
+## Só com pedido explícito do dono
+privacidade.html, termos.html, excluir-conta.html
+(conteúdo jurídico: não reescrever sozinho)
+
+## Não alterar sem necessidade
+favicon.svg, og-image.svg, README.md, .github/workflows/
+
+## Segurança
+- Não inserir chave, token, service_role, senha ou código de recuperação
+- Não pedir que o usuário envie senha ou código por e-mail
+- Links externos: HTTPS. Play oficial: https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro
+- Contato público já publicado: gustavosena972@gmail.com
+
+## Tom
+Transparente e adulto. Ângulo: para onde o dinheiro está indo.
