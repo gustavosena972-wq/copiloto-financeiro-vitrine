@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- ORGANIZAÇÃO DO CÓDIGO: URLs públicas que o mecanismo de busca deve conhecer. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/</loc></url>
   <url><loc>https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine/planos.html</loc></url>
