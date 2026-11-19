@@ -2,22 +2,22 @@
 
 :root{
   color-scheme:dark;
-  --paper:#0a0e22;
-  --surface:#1a1f42;
-  --ink:#eef2ff;
-  --muted:#b4bdd9;
-  --green:#8ec8ff;
-  --green-dark:#c4b5fd;
-  --gold:#a78bfa;
-  --line:rgba(180,170,255,.22);
+  --paper:#141413;
+  --surface:#1f1e1d;
+  --ink:#faf9f5;
+  --muted:#b0aea5;
+  --green:#6a9bcc;
+  --green-dark:#d97757;
+  --gold:#d97757;
+  --line:rgba(250,249,245,.14);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   background:
-    radial-gradient(ellipse 70% 40% at 100% -10%,rgba(124,92,255,.28),transparent 55%),
-    radial-gradient(ellipse 50% 35% at 0 0,rgba(70,130,255,.16),transparent 50%),
+    radial-gradient(ellipse 70% 40% at 100% -10%,rgba(217,119,87,.16),transparent 55%),
+    radial-gradient(ellipse 50% 35% at 0 0,rgba(106,155,204,.16),transparent 50%),
     var(--paper);
   color:var(--ink);
   font-family:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -54,13 +54,13 @@ h2{
 p,li{color:var(--muted)}
 a{color:var(--green);font-weight:600}
 a:hover{color:var(--green-dark)}
-.meta{font-size:14px;color:#9aa6c4}
+.meta{font-size:14px;color:#b0aea5}
 .panel{
   margin:23px 0;
   padding:23px 25px;
   border:1px solid var(--line);
   border-radius:20px;
-  background:linear-gradient(160deg,var(--surface),#161433);
+  background:linear-gradient(160deg,var(--surface),#262624);
   color:var(--ink);
 }
 .panel strong{color:var(--ink)}
@@ -71,12 +71,12 @@ a:hover{color:var(--green-dark)}
   margin-top:8px;
   padding:11px 16px;
   border-radius:12px;
-  background:linear-gradient(135deg,#6eb6ff,#a78bfa);
-  color:#061018;
+  background:#d97757;
+  color:#141413;
   text-decoration:none;
   font-weight:700;
 }
-.action:hover{color:#061018}
+.action:hover{color:#141413}
 .nav{
   display:flex;
   gap:12px 20px;
@@ -88,11 +88,11 @@ a:hover{color:var(--green-dark)}
 .note{
   margin-top:22px;
   padding:14px 16px;
-  border:1px solid rgba(167,139,250,.4);
+  border:1px solid rgba(217,119,87,.45);
   border-left:4px solid var(--gold);
   border-radius:12px;
-  background:rgba(124,92,255,.12);
-  color:#ddd6fe;
+  background:rgba(217,119,87,.12);
+  color:#faf9f5;
 }
 @media(max-width:600px){
   main{width:min(100% - 24px,900px);padding:36px 0 55px}
