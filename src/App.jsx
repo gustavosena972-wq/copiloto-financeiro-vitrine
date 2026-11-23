@@ -1,19 +1,163 @@
-import {useEffect,useState} from "react";
+import { useEffect, useState } from "react";
 
-const PLAY="https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro";
+const PLAY = "https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro";
 
-function Header(){const [route]=useRoute();const home=route==="home";return <header className="nav"><a className="brand" href="#/" aria-label="Copiloto Financeiro — início"><span className="mark">CF</span><span>Copiloto <span>Financeiro</span></span></a><nav className="nav-links"><a href={home?"#recursos":"#/recursos"}>Recursos</a><a href={home?"#seguranca":"#/seguranca"}>Segurança</a><a href="#/planos">Planos</a><a href="#/sobre">Sobre</a><a href="#/perguntas-frequentes">Central de dúvidas</a><a href="#/privacidade">Privacidade</a></nav><a className="btn secondary" href={PLAY}>Google Play</a></header>}
-function Footer(){return <footer className="footer"><div className="links"><a href="#/">Início</a><a href="#/app">App</a><a href="#/planos">Planos</a><a href="#/sobre">Sobre</a><a href="#/perguntas-frequentes">Central de dúvidas</a><a href="#/privacidade">Privacidade</a><a href="#/termos">Termos</a><a href="#/excluir-conta">Excluir conta</a></div></footer>}
-function Layout({children}){return <div className="wrap"><Header/><main>{children}</main><Footer/></div>}
-function useRoute(){const read=()=>{const h=location.hash;if(!h||h==="#"||h==="#/")return"home";if(["#recursos","#seguranca","#ferramentas"].includes(h))return"home";return h.replace("#/","").split("?")[0]||"home"};const[r,setR]=useState(read);useEffect(()=>{const f=()=>setR(read());addEventListener("hashchange",f);return()=>removeEventListener("hashchange",f)},[]);return[r]}
-function Hero({eyebrow,title,text,children}){return <><section className="hero" style={{gridTemplateColumns:"1fr",maxWidth:850}}><div><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p></div></section>{children}</>}
-function Home(){const items=[["01","Saiba para onde o dinheiro está indo","Registre receitas e despesas e consulte os movimentos do mês sem depender da memória."],["02","Veja seus compromissos com mais clareza","Organize cartões e contas para ter uma visão mais clara dos compromissos cadastrados."],["03","Organize a vida financeira em família","Reúna a organização da casa e acompanhe objetivos compartilhados, conforme o plano."],["04","Não perca de vista seus objetivos","Registre metas e patrimônio e acompanhe as informações ao longo do tempo."]];return <div className="home"><section className="hero"><div className="hero-copy"><p className="eyebrow">Controle financeiro pessoal e familiar</p><h1>Tenha mais clareza sobre sua <span className="hero-accent">vida financeira.</span></h1><p>Veja para onde seu dinheiro está indo e mantenha receitas, despesas, cartões, contas, metas e patrimônio reunidos para acompanhar o que está acontecendo — sem conectar sua conta bancária.</p><div className="cta"><a className="btn" href={PLAY}>Baixar na Google Play</a><a className="btn secondary" href="#/recursos">Conhecer o aplicativo</a></div><ul className="hero-proof"><li><span>01</span>Sem conexão bancária</li><li><span>02</span>Organização pessoal e familiar</li><li><span>03</span>Acesso por 30 dias</li></ul></div><div className="hero-art"><div className="art-glow"/><div className="chart-card"><div className="chart-top"><span>Visão do mês</span><b>●</b></div><div className="chart-title">Seus registros</div><div className="chart-meta">Receitas, despesas e compromissos em um só lugar</div><div className="smart-chart"><i/><i/><i/><i/><i/><i/><i/><svg viewBox="0 0 360 120" preserveAspectRatio="none"><path d="M0 98 C35 84 46 90 73 76 S120 88 145 58 S194 72 218 47 S263 59 286 29 S326 39 360 13"/></svg></div><div className="chart-legend"><span><em/>Movimentos</span><span><em/>Metas</span></div></div><div className="mini-card mini-goal"><span>Metas</span><strong>Acompanhar</strong><div className="goal-line"><b/></div></div></div></section><section className="section ledger" id="recursos"><div className="ledger-intro"><p className="eyebrow">Por que escolher o Copiloto</p><h2>Menos informação espalhada. Mais clareza para organizar o mês.</h2><p>O Copiloto transforma vários registros financeiros em uma visão mais simples do que entra, sai e do que você quer alcançar.</p></div><ol className="ledger-list">{items.map(([n,t,p])=><li key={n}><span>{n}</span><div><h3>{t}</h3><p>{p}</p></div></li>)}</ol><div className="section-actions"><a className="btn" href="#/recursos">Ver o aplicativo por dentro</a><a className="btn secondary" href="#/planos">Conhecer os planos</a></div></section><section className="section" id="ferramentas"><div className="section-head"><div><p className="eyebrow">Ferramentas nos planos</p><h2>Tabelas, margem de lucro e IA Tamanduá com limite por plano.</h2></div><p>Além do controle financeiro, o Copiloto inclui ferramentas para organizar e interpretar o que você cadastrou.</p></div><div className="quiet"><article><h3>Organização de tabelas</h3><p>Visualize lançamentos em formato tabular para acompanhar o mês.</p></article><article><h3>Margem de lucro</h3><p>Acompanhe a relação entre o que entra e o que sai.</p></article><article><h3>IA Tamanduá</h3><p>Pro até 30 usos, Max até 100 e Ultra até 300 por ciclo de 30 dias.</p></article><article><h3>Sem conexão bancária</h3><p>Você cadastra os dados. O app não importa movimentações da sua conta.</p><a className="btn secondary" href="#/planos">Ver planos</a></article></div></section><section className="section" id="seguranca"><div className="section-head"><div><p className="eyebrow">Segurança e privacidade</p><h2>Clareza também significa saber como seus dados são tratados.</h2></div><p>Você cadastra as informações e pode consultar os detalhes sobre tratamento, armazenamento e seus direitos.</p></div><div className="quiet"><article><h3>Você cadastra as informações</h3><p>As informações financeiras usadas no aplicativo são inseridas por você.</p></article><article><h3>Sem conexão bancária</h3><p>O Copiloto não se conecta à sua conta para importar movimentações.</p></article><article><h3>Tratamento dos dados</h3><p>A Política de Privacidade apresenta as informações tratadas e as finalidades.</p></article><article><h3>Consulte seus direitos</h3><p>Conheça os procedimentos relacionados aos seus dados e à sua conta.</p><a className="btn secondary" href="#/privacidade">Ler Política de Privacidade</a></article></div></section></div>}
-const plans=[["Pro","PARA COMEÇAR","R$ 20,00","cerca de R$ 0,67 por dia","Até 2 membros · menor cota de IA",["Receitas, despesas, cartões e contas","Metas e patrimônio","Organização de tabelas","Margem de lucro","IA Tamanduá — até 30 usos no ciclo de 30 dias"]],["Max","MAIS ESCOLHIDO PARA FAMÍLIAS","R$ 28,00","cerca de R$ 0,93 por dia","Até 6 membros · mais IA que o Pro",["Tudo do Pro","Organização compartilhada em família","Organização de tabelas","Margem de lucro","IA Tamanduá — até 100 usos no ciclo de 30 dias"],true],["Ultra","ACESSO COMPLETO","R$ 40,00","cerca de R$ 1,33 por dia","Membros ilimitados · maior cota de IA",["Tudo do Pro e Max","Membros ilimitados","Relatórios avançados","Patrimônio histórico e simulador","Organização de tabelas e margem de lucro","IA Tamanduá — até 300 usos no ciclo de 30 dias"]]];
-function Plans(){return <Hero eyebrow="PLANOS E FERRAMENTAS" title="Escolha o acesso que combina com o tamanho da família e o uso da IA." text="Todos os planos incluem organização financeira, tabelas e margem de lucro. Cada contratação vale 30 dias, sem renovação automática, pela Google Play."><section className="plans">{plans.map(([name,badge,price,daily,limit,features,featured])=><article className={"plan"+(featured?" featured":"")} key={name}><span className="badge">{badge}</span><h2>{name}</h2><p className="desc">{name==="Pro"?"Para quem está organizando sozinho ou em dupla e quer testar a IA com limite menor.":name==="Max"?"Para famílias que compartilham a organização e usam a IA com mais frequência.":"Para quem precisa de membros ilimitados, visão avançada e a maior cota da IA Tamanduá."}</p><ul className="features">{features.map(x=><li key={x}>{x}</li>)}</ul><div className="price">{price}<small>/ 30 dias · {daily}</small></div><div className="limit">{limit}</div><a className="btn" style={{display:"flex",marginTop:14}} href={PLAY}>Escolher no aplicativo</a></article>)}</section><section className="more"><div className="more-inner"><h2>O que vem em todos os planos</h2><p><strong>Organização de tabelas</strong> — visualize e organize lançamentos de forma tabular.</p><p><strong>Margem de lucro</strong> — acompanhe a relação entre entradas e saídas.</p><p><strong>IA Tamanduá</strong> — quando a cota acaba, o restante do app continua funcionando; só a IA fica pausada.</p></div></section></Hero>}
-function Resources(){const [tab,setTab]=useState("controle");const data={controle:["Controle financeiro",[["Receitas","Cadastre entradas e consulte o que foi recebido no período."],["Despesas","Registre gastos e veja os lançamentos do mês."],["Cartões","Organize cartões e acompanhe compromissos."],["Contas","Mantenha suas contas cadastradas."]]],familia:["Família",[["Membros","Inclua os membros previstos no plano."],["Organização compartilhada","Reúna as informações financeiras da casa."],["Tamanho da família","Compare os planos conforme a quantidade de membros."]]],planejamento:["Planejamento",[["Metas","Cadastre objetivos e acompanhe os valores registrados."],["Acompanhamento","Consulte seus registros para planejar os próximos passos."],["Dívidas","Registre compromissos relacionados às dívidas."]]],patrimonio:["Patrimônio e relatórios",[["Patrimônio","Cadastre seus bens e acompanhe suas informações."],["Relatórios","Consulte os dados organizados com mais contexto."],["Histórico","Acompanhe registros anteriores."]]]};return <Hero eyebrow="RECURSOS DO APLICATIVO" title="Mais do que registrar: acompanhe sua vida financeira em um só lugar." text="Conheça a experiência do aplicativo e veja como cada área ajuda a organizar sua vida financeira."><section className="app-showcase"><div className="app-copy"><span className="eyebrow">CONHEÇA O APLICATIVO</span><h2>Veja por dentro do Copiloto Financeiro.</h2><p>Conheça visualmente a experiência do aplicativo antes de baixar.</p><div className="cta"><a className="btn" href={PLAY}>Baixar na Google Play</a></div></div><div className="app-preview"><div className="preview-top"><span>Copiloto Financeiro</span><small>Visão geral</small></div><div className="app-panels"><div className="app-panel app-panel-main"><small>Saldo disponível</small><strong>Seus registros</strong><div className="panel-row"><span>Receitas</span><b>—</b></div><div className="panel-row"><span>Despesas</span><b>—</b></div></div><div className="app-panel"><small>Despesas</small><div className="bars"><i/><i/><i/><i/><i/></div><b>Este mês</b></div><div className="app-panel"><small>Cartões e contas</small><div className="list-line"><span>Cartão principal</span><b>—</b></div><div className="list-line"><span>Conta corrente</span><b>—</b></div></div><div className="app-panel"><small>Metas</small><div className="goal"><span>Reserva</span><b>68%</b></div><div className="goal-track"><span/></div><div className="goal"><span>Viagem</span><b>42%</b></div><div className="goal-track"><span/></div></div></div><div className="app-nav"><span>Início</span><span>Finanças</span><span>Cartões</span><span>Metas</span></div></div></section><nav className="tabs">{Object.keys(data).map(k=><button className={"tab"+(tab===k?" active":"")} onClick={()=>setTab(k)} key={k}>{data[k][0]}</button>)}</nav><section className="panel"><h2>{data[tab][0]}</h2><div className="items">{data[tab][1].map(([t,p])=><article className="item" key={t}><h3>{t}</h3><p>{p}</p></article>)}</div></section><section className="more"><div className="more-inner"><h2>Conheça o app e comece sua organização</h2><a className="btn" href={PLAY}>Baixar na Google Play</a> <a className="btn secondary" href="#/planos">Ver planos</a></div></section></Hero>}
-function Security(){return <Hero eyebrow="SEGURANÇA" title="Segurança" text="Entenda de forma simples como o Copiloto trata e protege as informações utilizadas no aplicativo."><section className="section"><div className="section-head"><div><span className="eyebrow">SEGURANÇA E PRIVACIDADE</span><h2>Saiba onde os dados ficam e como o serviço os trata.</h2></div><p>O Copiloto não acessa sua conta bancária. As informações financeiras usadas pelos recursos são cadastradas por você.</p></div><div className="grid"><article className="card"><div className="icon">◎</div><h3>Você controla o que cadastra</h3><p>Receitas, despesas, cartões, contas, metas e patrimônio são inseridos por você.</p></article><article className="card"><div className="icon">⌂</div><h3>Onde os dados ficam</h3><p>A estrutura principal está configurada no Supabase em São Paulo, Brasil, com infraestrutura alternativa no Reino Unido e nos Estados Unidos para continuidade.</p></article><article className="card"><div className="icon">≡</div><h3>Operação</h3><p>Supabase participa da autenticação e armazenamento. A Google Play processa e valida as compras.</p></article><article className="card"><div className="icon">✓</div><h3>Direitos</h3><p>Consulte os direitos e procedimentos aplicáveis na Política de Privacidade.</p><a className="btn secondary" style={{marginTop:14}} href="#/privacidade">Ver Política de Privacidade</a></article></div></section></Hero>}
-function About(){return <Hero eyebrow="SOBRE" title="Um projeto independente para organizar a vida financeira." text="Conheça a proposta do Copiloto Financeiro e a pessoa responsável por seu desenvolvimento."><section className="section"><div className="section-head"><div><span className="eyebrow">SOBRE O PRODUTO</span><h2>Uma proposta simples: transformar informação espalhada em uma visão mais organizada da vida financeira.</h2></div><p>O Copiloto é um aplicativo Android independente, criado por Gustavo Sena, para reunir registros da rotina financeira pessoal e familiar — sem conectar à conta bancária.</p></div><div className="grid"><article className="card"><h3>Por que o Copiloto existe</h3><p>Receitas, despesas, cartões, contas, metas e patrimônio costumam ficar espalhados entre anotações, aplicativos e planilhas. O Copiloto nasceu para reunir isso com mais clareza.</p></article><article className="card"><h3>Para quem foi pensado</h3><p>Para quem quer mais clareza sobre o próprio dinheiro e para famílias que desejam organizar suas finanças em conjunto.</p></article></div></section><section className="section"><div className="section-head"><div><span className="eyebrow">COMO PENSAMOS O PRODUTO</span><h2>Organização antes de complicação.</h2></div><p>O foco está em deixar as informações acessíveis sem transformar o controle financeiro em uma tarefa difícil de manter.</p></div><div className="grid"><article className="card"><div className="icon">01</div><h3>Visão do dia a dia</h3><p>Acompanhe o que entra, sai e os compromissos financeiros.</p></article><article className="card"><div className="icon">02</div><h3>Planejamento</h3><p>Metas e organização financeira fazem parte da mesma visão.</p></article><article className="card"><div className="icon">03</div><h3>Vida pessoal e familiar</h3><p>Organize situações em que mais de uma pessoa participa.</p></article></div></section></Hero>}
-const faqs=[["O que é o Copiloto Financeiro?","É um aplicativo Android voltado ao controle financeiro pessoal e familiar."],["Preciso conectar minha conta bancária?","Não. As informações financeiras são cadastradas por você."],["Posso usar com minha família?","Sim. Os planos permitem diferentes quantidades de membros."],["Qual a diferença entre os planos?","Pro: 2 membros e 30 usos de IA; Max: 6 membros e 100 usos; Ultra: membros ilimitados e 300 usos, além de recursos avançados."],["O Copiloto é gratuito?","Não. É necessário contratar Pro, Max ou Ultra. Não há modalidade gratuita nem período de teste."],["Os planos têm renovação automática?","Não. São passes de 30 dias sem renovação automática."],["O que acontece quando acaba a cota da IA?","O restante do aplicativo continua funcionando; apenas a IA fica pausada."],["Quem é responsável pelo Copiloto?","Gustavo Sena é o idealizador e responsável pelo desenvolvimento e evolução do projeto."],["Como o Copiloto trata meus dados financeiros?","Você cadastra os dados; o Copiloto não acessa sua conta bancária para importar movimentações."]];function FAQ(){return <Hero eyebrow="CENTRAL DE DÚVIDAS" title="Perguntas e respostas sobre o Copiloto Financeiro." text="Reunimos as principais dúvidas sobre aplicativo, planos, uso familiar, privacidade e contratação."><section className="group"><div className="faq">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></section></Hero>}
-function AppPage(){return <Hero eyebrow="O APLICATIVO" title="Organize sua vida financeira dentro do Copiloto." text="Veja o que o aplicativo oferece e baixe pela Google Play. Os planos e preços ficam na página de Planos."><section className="section"><div className="grid"><article className="card"><h3>Organização do dia a dia</h3><p>Registre entradas, saídas, compromissos e informações financeiras em um só lugar.</p></article><article className="card"><h3>Família e objetivos</h3><p>Organize membros e acompanhe metas conforme o plano.</p></article><article className="card"><h3>Patrimônio e visão geral</h3><p>Registre patrimônio e consulte informações organizadas.</p></article><article className="card"><h3>Sem conexão bancária</h3><p>Você cadastra as informações. O Copiloto não acessa sua conta bancária.</p></article></div><div className="cta"><a className="btn" href={PLAY}>Baixar na Google Play</a><a className="btn secondary" href="#/recursos">Ver recursos e telas</a></div></section></Hero>}
-function Legal({title,text}){return <Hero eyebrow="INFORMAÇÕES LEGAIS" title={title} text={text}><section className="section"><div className="panel"><h2>{title}</h2><p>Esta área foi integrada à navegação React da vitrine. O conteúdo legal completo deve permanecer disponível antes da publicação definitiva.</p></div></section></Hero>}
-export default function App(){const[route]=useRoute();useEffect(()=>{if(route==="home"&&["#recursos","#seguranca","#ferramentas"].includes(location.hash))requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:"smooth"}));else scrollTo(0,0)},[route]);const pages={home:<Home/>,planos:<Plans/>,recursos:<Resources/>,seguranca:<Security/>,sobre:<About/>,app:<AppPage/>,"perguntas-frequentes":<FAQ/>,privacidade:<Legal title="Política de Privacidade" text="Entenda como os dados do Copiloto são tratados e quais são os direitos aplicáveis."/> ,termos:<Legal title="Termos de Uso" text="Consulte as regras de utilização do Copiloto Financeiro e da contratação dos acessos."/> ,"excluir-conta":<Legal title="Excluir conta" text="Consulte o procedimento de exclusão da conta e as orientações relacionadas à Google Play."/>};return <Layout>{pages[route]||<Home/>}</Layout>}
+const plans = [
+  { name: "Pro", price: "R$ 20", members: "Até 2 membros", ia: "IA até 30 usos", points: ["Receitas e despesas", "Cartões e contas", "Metas e patrimônio", "Tabelas e margem"] },
+  { name: "Max", price: "R$ 28", members: "Até 6 membros", ia: "IA até 100 usos", points: ["Tudo do Pro", "Mais membros da casa", "Organização em conjunto", "Cota maior da IA"], featured: true },
+  { name: "Ultra", price: "R$ 40", members: "Membros ilimitados", ia: "IA até 300 usos", points: ["Tudo do Max", "Relatórios avançados", "Patrimônio histórico", "Simulador"] },
+];
+
+const faqs = [
+  ["Preciso pagar?", "Sim. O app é pago. Pro, Max e Ultra duram 30 dias e a compra é na Google Play, sem renovação automática."],
+  ["Conecta na conta do banco?", "Não. Você cadastra receitas, despesas e o resto. Nada é importado do banco."],
+  ["Perdi o acesso. Como recupero?", "Entre com a mesma conta Google usada na Play. O passe de 30 dias fica ligado a essa compra."],
+  ["Como excluo a conta?", "A exclusão da conta deve ser solicitada pelo procedimento disponível no aplicativo. A compra na Google Play segue as regras da loja."],
+  ["A IA Tamanduá está sempre ligada?", "Cada plano tem uma cota por ciclo de 30 dias. Acabou a cota, o app continua; só a IA pausa até o próximo ciclo."],
+];
+
+function useRoute() {
+  const read = () => {
+    const h = location.hash;
+    if (!h || h === "#" || h === "#/") return "home";
+    if (["#recursos", "#ferramentas", "#seguranca"].includes(h)) return "home";
+    return h.replace("#/", "").split("?")[0] || "home";
+  };
+  const [route, setRoute] = useState(read);
+  useEffect(() => {
+    const onChange = () => setRoute(read());
+    addEventListener("hashchange", onChange);
+    return () => removeEventListener("hashchange", onChange);
+  }, []);
+  return route;
+}
+
+function Frame({ children, className = "" }) {
+  return <div className={`frame ${className}`}>{children}</div>;
+}
+
+function Header() {
+  const route = useRoute();
+  const [open, setOpen] = useState(false);
+  const home = route === "home";
+  const links = [
+    [home ? "#recursos" : "#/recursos", "Recursos"],
+    [home ? "#seguranca" : "#/seguranca", "Segurança"],
+    ["#/planos", "Planos"],
+    ["#/sobre", "Sobre"],
+    ["#/perguntas-frequentes", "Dúvidas"],
+  ];
+  return <header className="site-header">
+    <Frame className="nav">
+      <a className="brand" href="#/"><span className="brand-mark">CF</span><span>Copiloto Financeiro</span></a>
+      <button className="menu-button" onClick={() => setOpen(v => !v)} aria-label={open ? "Fechar menu" : "Abrir menu"}>{open ? "×" : "☰"}</button>
+      <nav className={`nav-links ${open ? "open" : ""}`}>
+        {links.map(([href, label]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}
+      </nav>
+      <a className="play-button nav-play" href={PLAY}>Google Play</a>
+    </Frame>
+  </header>;
+}
+
+function Footer() {
+  return <footer className="footer">
+    <Frame className="footer-inner">
+      <div><a className="brand footer-brand" href="#/"><span className="brand-mark">CF</span><span>Copiloto Financeiro</span></a><p>Controle financeiro pessoal e familiar. Sem conexão bancária.</p></div>
+      <div className="footer-links">
+        <a href="#/planos">Planos</a><a href="#/recursos">Recursos</a><a href="#/seguranca">Segurança</a><a href="#/sobre">Sobre</a><a href="#/perguntas-frequentes">Dúvidas</a><a href="#/privacidade">Privacidade</a><a href="#/termos">Termos</a><a href="#/excluir-conta">Excluir conta</a>
+      </div>
+    </Frame>
+  </footer>;
+}
+
+function Shell({ children }) { return <div className="site"><Header/><main>{children}</main><Footer/></div>; }
+
+function PageHead({ kicker, title, text }) {
+  return <section className="page-head"><Frame><p className="eyebrow">{kicker}</p><h1>{title}</h1><p>{text}</p></Frame></section>;
+}
+
+function Home() {
+  const reasons = [
+    ["01", "Para onde o dinheiro vai", "Receitas e despesas do mês, só com o que você cadastrou."],
+    ["02", "Cartões e contas", "Compromissos reunidos. O banco não entra nessa conta."],
+    ["03", "Casa e metas", "Família no mesmo plano, com metas e patrimônio."],
+    ["04", "Tabelas e margem", "O mês em tabela e a relação entre o que entra e o que sai."],
+  ];
+  return <>
+    <section className="hero bg-paper"><Frame className="hero-grid">
+      <div className="hero-copy">
+        <p className="eyebrow">Copiloto Financeiro · Android</p>
+        <h1>Para onde o seu dinheiro está indo?</h1>
+        <p className="hero-text">App de Gustavo Sena para organizar a casa. Você registra. Nada é puxado do banco.</p>
+        <div className="actions"><a className="button primary" href={PLAY}>Baixar na Google Play</a><a className="button outline" href="#/recursos">Conhecer o aplicativo</a></div>
+        <div className="trust-row"><span>01 · Sem conexão bancária</span><span>02 · Uso pessoal e familiar</span><span>03 · Acesso por 30 dias</span></div>
+      </div>
+      <div className="hero-visual">
+        <div className="visual-card"><p>O mês, do seu jeito</p><h2>Entradas, saídas e o que sobra</h2><div className="bars">{[8,12,10,16,14,20,16].map((h,i)=><i key={i} style={{height:`${h * 4}px`}}/>)}</div><small>Sem número inventado. O gráfico só existe depois do lançamento.</small></div>
+      </div>
+    </Frame></section>
+
+    <section className="section white"><Frame className="split">
+      <div><p className="eyebrow">A proposta</p><h2>Projeto independente. Um app, não um banco.</h2></div>
+      <div className="text-column"><p>Gustavo Sena faz o Copiloto para controle pessoal e familiar. A vitrine fala do Android. Não há conexão com sua conta bancária.</p><p>Os dados ficam em São Paulo, com infraestrutura alternativa no Reino Unido e nos EUA. A compra é um passe de 30 dias na Google Play, sem renovação automática.</p><a className="text-link" href="#/sobre">Sobre o projeto →</a></div>
+    </Frame></section>
+
+    <section className="section sand" id="recursos"><Frame>
+      <p className="eyebrow">Por que escolher</p><h2>Quatro coisas, sem planilha espalhada.</h2>
+      <div className="reason-grid">{reasons.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div>
+      <div className="actions"><a className="button primary" href="#/recursos">Ver o aplicativo por dentro</a><a className="button outline" href="#/planos">Conhecer os planos</a></div>
+    </Frame></section>
+
+    <section className="section bg-paper" id="ferramentas"><Frame>
+      <div className="section-heading"><div><p className="eyebrow">Ferramentas</p><h2>Organização além do básico.</h2></div><p>O Copiloto reúne recursos para acompanhar o que você cadastrou sem complicar o dia a dia.</p></div>
+      <div className="feature-grid"><article><h3>Tabelas</h3><p>Visualize os lançamentos de forma tabular para acompanhar o mês.</p></article><article><h3>Margem de lucro</h3><p>Acompanhe a relação entre entradas e saídas.</p></article><article><h3>IA Tamanduá</h3><p>Pro até 30 usos, Max até 100 e Ultra até 300 por ciclo.</p></article><article><h3>Sem conexão bancária</h3><p>Você cadastra os dados. O app não importa movimentações da conta.</p></article></div>
+    </Frame></section>
+
+    <section className="section white" id="seguranca"><Frame>
+      <div className="section-heading"><div><p className="eyebrow">Segurança e privacidade</p><h2>Clareza também significa saber como seus dados são tratados.</h2></div><p>Você cadastra as informações e pode consultar os detalhes sobre tratamento, armazenamento e seus direitos.</p></div>
+      <div className="feature-grid"><article><h3>Você cadastra</h3><p>Receitas, despesas e demais informações entram pelo app. Nada vem do banco.</p></article><article><h3>Onde fica</h3><p>Estrutura principal em São Paulo, com infraestrutura alternativa no Reino Unido e nos EUA.</p></article><article><h3>O que não faz</h3><p>Não lê sua conta bancária e não importa movimentações automaticamente.</p></article><article><h3>Detalhes legais</h3><p>Consulte a Política de Privacidade para os detalhes aplicáveis.</p><a className="text-link" href="#/privacidade">Ler política →</a></article></div>
+    </Frame></section>
+  </>;
+}
+
+function Plans() {
+  return <><PageHead kicker="Planos" title="Três passes de 30 dias." text="A compra é na Google Play. Não renova sozinha. A cota da IA Tamanduá sobe do Pro ao Ultra."/><Frame><div className="plans-grid">{plans.map(p=><article className={`plan-card ${p.featured ? "featured" : ""}`} key={p.name}><span className="plan-tag">{p.featured ? "MAIS ESCOLHIDO" : p.name === "Ultra" ? "ACESSO COMPLETO" : "PARA COMEÇAR"}</span><h2>{p.name}</h2><div className="price">{p.price}<small>/ 30 dias</small></div><p className="members">{p.members} · {p.ia}</p><ul>{p.points.map(x=><li key={x}>{x}</li>)}</ul><a className="button primary full" href={PLAY}>Escolher na Google Play</a></article>)}</div><section className="notice"><h2>O que vem em todos os planos</h2><p><strong>Tabelas</strong> para organizar lançamentos · <strong>Margem de lucro</strong> para acompanhar entradas e saídas · <strong>IA Tamanduá</strong> com cota por ciclo de 30 dias.</p></section></Frame></>;
+}
+
+function Resources() {
+  const [tab,setTab]=useState("controle");
+  const data={
+    controle:["Controle financeiro",[["Receitas","Cadastre entradas e consulte o que foi recebido no período."],["Despesas","Registre gastos e veja os lançamentos do mês."],["Cartões","Organize cartões e acompanhe compromissos."],["Contas","Mantenha suas contas cadastradas."]]],
+    familia:["Família",[["Membros","Inclua os membros previstos no plano."],["Organização compartilhada","Reúna as informações financeiras da casa."],["Tamanho da família","Compare os planos conforme a quantidade de membros."]]],
+    planejamento:["Planejamento",[["Metas","Cadastre objetivos e acompanhe os valores registrados."],["Acompanhamento","Consulte seus registros para planejar os próximos passos."],["Dívidas","Registre compromissos relacionados às dívidas."]]],
+    patrimonio:["Patrimônio e relatórios",[["Patrimônio","Cadastre seus bens e acompanhe suas informações."],["Relatórios","Consulte os dados organizados com mais contexto."],["Histórico","Acompanhe registros anteriores."]]]
+  };
+  return <><PageHead kicker="Recursos do aplicativo" title="Mais do que registrar: acompanhe sua vida financeira em um só lugar." text="Conheça a experiência do aplicativo e veja como cada área ajuda a organizar sua vida financeira."/><Frame><section className="app-showcase"><div><p className="eyebrow">Conheça o aplicativo</p><h2>Veja por dentro do Copiloto Financeiro.</h2><p>Conheça visualmente a experiência do aplicativo antes de baixar.</p><a className="button primary" href={PLAY}>Baixar na Google Play</a></div><div className="phone-mock"><div className="phone-top">Copiloto Financeiro <span>Visão geral</span></div><div className="mock-balance">Seus registros</div><div className="mock-line"><span>Receitas</span><b>—</b></div><div className="mock-line"><span>Despesas</span><b>—</b></div><div className="mock-panel"><span>Metas</span><b>68%</b><div><i/></div></div><div className="mock-panel"><span>Cartões e contas</span><p>Cartão principal · Conta corrente</p></div></div></section><div className="tabs">{Object.keys(data).map(k=><button className={tab===k?"active":""} onClick={()=>setTab(k)} key={k}>{data[k][0]}</button>)}</div><section className="resource-panel"><h2>{data[tab][0]}</h2><div className="resource-grid">{data[tab][1].map(([t,d])=><article key={t}><h3>{t}</h3><p>{d}</p></article>)}</div></section></Frame></>;
+}
+
+function Security(){return <><PageHead kicker="Segurança" title="Seus números ficam onde você colocou." text="Linguagem direta: o que o app guarda, onde, e o que ele não acessa."/><Frame><div className="security-grid"><article><h2>Você cadastra</h2><p>Receitas, despesas e o resto entram pelo app. Nada vem do banco.</p></article><article><h2>Onde fica</h2><p>Estrutura principal em São Paulo. Há infraestrutura alternativa no Reino Unido e nos EUA para continuidade.</p></article><article><h2>O que não faz</h2><p>Não lê sua conta bancária e não importa movimentações automaticamente.</p></article></div><p className="bottom-note">Detalhes jurídicos na <a href="#/privacidade">Política de Privacidade</a>.</p></Frame></>}
+
+function About(){return <><PageHead kicker="Sobre" title="Um app Android, de Gustavo Sena." text="Projeto independente de controle financeiro pessoal e familiar. A vitrine é para Android."/><Frame><div className="prose"><p>A pergunta da casa é simples: para onde o dinheiro está indo. A resposta vem do que a pessoa cadastra, não de uma conexão com o banco.</p><p>O Copiloto reúne receitas, despesas, cartões, contas, metas e patrimônio para deixar a organização financeira mais acessível no dia a dia.</p></div></Frame></>}
+
+function FAQ(){return <><PageHead kicker="Dúvidas" title="Respostas curtas." text="Preço, banco, acesso e exclusão, sem rodeio."/><Frame><div className="faq-list">{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></Frame></>}
+
+function AppPage(){return <><PageHead kicker="O aplicativo" title="Organize sua vida financeira dentro do Copiloto." text="Veja o que o aplicativo oferece e baixe pela Google Play. Os planos e preços ficam na página de Planos."/><Frame><div className="feature-grid page-features"><article><h3>Organização do dia a dia</h3><p>Registre entradas, saídas, compromissos e informações financeiras em um só lugar.</p></article><article><h3>Família e objetivos</h3><p>Organize membros e acompanhe metas conforme o plano.</p></article><article><h3>Patrimônio e visão geral</h3><p>Registre patrimônio e consulte informações organizadas.</p></article><article><h3>Sem conexão bancária</h3><p>Você cadastra as informações. O Copiloto não acessa sua conta bancária.</p></article></div><div className="actions page-actions"><a className="button primary" href={PLAY}>Baixar na Google Play</a><a className="button outline" href="#/recursos">Ver recursos e telas</a></div></Frame></>}
+
+function Legal({kind}) {
+  const data={
+    privacidade:["Política de Privacidade","Informações sobre os dados tratados pelo aplicativo, suas finalidades e os direitos aplicáveis."],
+    termos:["Termos de Uso","Regras de utilização do Copiloto Financeiro e dos passes contratados pela Google Play."],
+    "excluir-conta":["Excluir conta","Orientações para solicitar a exclusão da conta e informações relacionadas à compra na Google Play."]
+  };
+  const [title,text]=data[kind]||data.privacidade;
+  return <><PageHead kicker="Informações legais" title={title} text={text}/><Frame><section className="legal-box"><h2>{title}</h2><p>Esta página está integrada à navegação React da vitrine. Antes da publicação definitiva, o texto legal completo deve ser mantido aqui, sem substituir o documento jurídico por este resumo.</p></section></Frame></>;
+}
+
+function App(){
+  const route=useRoute();
+  useEffect(()=>{scrollTo(0,0); if(route==="home" && location.hash.startsWith("#") && ["#recursos","#ferramentas","#seguranca"].includes(location.hash)) requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:"smooth"}));},[route]);
+  const page={home:<Home/>,planos:<Plans/>,recursos:<Resources/>,seguranca:<Security/>,sobre:<About/>,app:<AppPage/>, "perguntas-frequentes":<FAQ/>,privacidade:<Legal kind="privacidade"/>,termos:<Legal kind="termos"/>, "excluir-conta":<Legal kind="excluir-conta"/>}[route] || <Home/>;
+  return <Shell>{page}</Shell>;
+}
+
+export default App;
