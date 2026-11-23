@@ -29,11 +29,33 @@ O núcleo do produto permanece em `copiloto-financeir`:
 - testes do aplicativo
 - integrações internas
 
+## Stack atual
+
+A vitrine agora usa React com Vite como base de desenvolvimento e build.
+
+- React
+- React DOM
+- Vite
+- JavaScript/JSX apenas na camada interna do React
+- GitHub Actions para build e deploy no GitHub Pages
+
+O projeto não deve receber novas telas em HTML/CSS/JavaScript estáticos. As próximas interfaces devem ser componentes React e estilos importados pelo React.
+
+## Arquivos principais
+
+- `src/App.jsx`
+- `src/main.jsx`
+- `src/styles.css`
+- `package.json`
+- `vite.config.js`
+- `.github/workflows/deploy.yml`
+
 ## Regra de trabalho
 
 Alterações neste repositório devem ficar restritas à experiência pública da vitrine. Alterações no aplicativo, backend ou banco devem continuar no repositório principal.
 
 ## Arquivos
+
 
 - `index.html`
 - `privacidade.html`
