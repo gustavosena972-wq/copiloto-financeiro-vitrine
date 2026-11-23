@@ -1,67 +1,32 @@
 # Copiloto Financeiro — Vitrine
 
-Este repositório contém exclusivamente a vitrine pública do Copiloto Financeiro.
-
-## Aplicativo real
-
-O aplicativo Android oficial é o produto principal e está disponível na Google Play:
-
-**[Abrir o Copiloto Financeiro na Google Play](https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro)**
-
-A vitrine **não copia o código do Android** e não cria uma segunda versão do aplicativo. Ela apenas apresenta o produto e direciona o usuário para a versão oficial distribuída pela Google Play.
-
-## Responsabilidade
-
-- Vitrine institucional
-- Apresentação de recursos e planos
-- Páginas públicas de privacidade, termos e exclusão de conta
-- Assets e conteúdo visual da vitrine
-- Link para o aplicativo Android oficial
-
-## Fora deste repositório
-
-O núcleo do produto permanece em `copiloto-financeir`:
-
-- aplicativo Android
-- Supabase e banco de dados
-- Edge Functions
-- migrations e segurança
-- testes do aplicativo
-- integrações internas
+Vitrine oficial do Copiloto Financeiro, aplicativo Android de controle financeiro pessoal e familiar.
 
 ## Stack atual
-
-A vitrine agora usa React com Vite como base de desenvolvimento e build.
 
 - React
 - React DOM
 - Vite
-- JavaScript/JSX apenas na camada interna do React
-- GitHub Actions para build e deploy no GitHub Pages
+- JSX
+- GitHub Actions / GitHub Pages
 
-O projeto não deve receber novas telas em HTML/CSS/JavaScript estáticos. As próximas interfaces devem ser componentes React e estilos importados pelo React.
+A interface principal foi migrada para componentes React. A vitrine usa rotas por hash para continuar funcionando no GitHub Pages sem backend adicional.
 
-## Arquivos principais
+## Estrutura principal
 
-- `src/App.jsx`
-- `src/main.jsx`
-- `src/styles.css`
-- `package.json`
-- `vite.config.js`
-- `.github/workflows/deploy.yml`
+- `src/App.jsx` — páginas e componentes da vitrine
+- `src/styles.css` — identidade visual e responsividade
+- `src/main.jsx` — entrada React
+- `package.json` — dependências e scripts
+- `vite.config.js` — configuração do Vite
+- `.github/workflows/deploy.yml` — publicação no GitHub Pages
 
-## Regra de trabalho
+## Produto
 
-Alterações neste repositório devem ficar restritas à experiência pública da vitrine. Alterações no aplicativo, backend ou banco devem continuar no repositório principal.
+- Android
+- Controle financeiro pessoal e familiar
+- Sem conexão bancária
+- Passes de 30 dias
+- Contratação pela Google Play
 
-## Arquivos
-
-
-- `index.html`
-- `privacidade.html`
-- `termos.html`
-- `excluir-conta.html`
-
-## Importante
-
-O repositório da vitrine é separado do projeto principal. Nenhum código, banco ou configuração interna do aplicativo deve ser duplicado aqui apenas para permitir visualização.
+Google Play: https://play.google.com/store/apps/details?id=br.com.copiloto.financeiro
