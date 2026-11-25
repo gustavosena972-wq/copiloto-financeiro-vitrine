@@ -1,0 +1,2 @@
+import { Frame, Shell, PageHead } from "../components/Shell.jsx";
+export default function Termos(){return <Shell><Frame><PageHead kicker="Termos" title="Acesso por 30 dias." text="Pro, Max e Ultra são passes pagos na Google Play. Não há renovação automática nesta vitrine. O uso é no app Android."/><p className="max-w-2xl pb-16 text-muted">O contrato completo da loja prevalece sobre este resumo.</p></Frame></Shell>;}
