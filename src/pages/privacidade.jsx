@@ -1,2 +1,0 @@
-import { Frame, Shell, PageHead } from "../components/Shell.jsx";
-export default function Privacidade(){return <Shell><Frame><PageHead kicker="Privacidade" title="O que tratamos." text="Dados que você lança no app Android, para organizar finanças. Compra pela Google Play. Infraestrutura em São Paulo, com alternativa no Reino Unido e nos EUA."/><p className="max-w-2xl pb-16 text-muted">Esta página é o resumo da vitrine. O texto legal completo continua no repositório da vitrine e deve ser o que vale na loja. Não há app web.</p></Frame></Shell>;}
