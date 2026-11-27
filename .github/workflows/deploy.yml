@@ -38,6 +38,29 @@ jobs:
           cp -f planos.html recursos.html seguranca.html sobre.html perguntas-frequentes.html privacidade.html termos.html excluir-conta.html app.html app-por-dentro.html robots.txt lms.txt sitemap.xml favicon.svg og-image.svg dist/ 2>/dev/null || true
           cp -f legal.css dist/ 2>/dev/null || true
 
+      - name: Generate sitemap from published HTML pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          base = "https://gustavosena972-wq.github.io/copiloto-financeiro-vitrine"
+          excluded = {"layout-experimental.html"}
+          pages = []
+
+          for path in sorted(Path("dist").glob("*.html")):
+              if path.name in excluded:
+                  continue
+              url = base + "/" if path.name == "index.html" else f"{base}/{path.name}"
+              pages.append(f"  <url><loc>{url}</loc></url>")
+
+          sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
+          sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+          sitemap += "\n".join(pages)
+          sitemap += "\n</urlset>\n"
+
+          Path("dist/sitemap.xml").write_text(sitemap, encoding="utf-8")
+          PY
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
