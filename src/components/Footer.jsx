@@ -3,35 +3,16 @@ import { NAV_ITEMS, PLAY_STORE_URL } from '../data/content';
 
 export function Footer({ onSelectTab }) {
   return (
-    <footer className="footer">
-      <div className="container footer-inner">
-        <div className="footer-brand">
-          <strong>Copiloto Financeiro</strong>
-          <p>
-            Controle financeiro pessoal e familiar com lançamento 100% manual, tabelas claras e IA Tamanduá. Exclusivo para Android na Google Play.
-          </p>
-        </div>
-
-        <div className="footer-links">
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              className="footer-link-btn"
-              onClick={() => onSelectTab(item.id)}
-            >
-              {item.label}
-            </button>
-          ))}
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-store-link"
-          >
-            Abrir na Google Play ↗
-          </a>
-        </div>
+    <footer className="border-t border-line bg-paper text-ink">
+      <div className="mx-auto flex w-[min(72rem,calc(100%-2rem))] flex-wrap gap-x-5 gap-y-3 py-8 text-[15px] text-muted">
+        {NAV_ITEMS.map((item) => (
+          <button key={item.id} type="button" className="border-0 bg-transparent p-0 text-[15px] text-muted" onClick={() => onSelectTab(item.id)}>
+            {item.label}
+          </button>
+        ))}
+        <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">Privacidade</a>
+        <a href="/copiloto-financeiro-vitrine/termos.html">Termos</a>
+        <a href="/copiloto-financeiro-vitrine/excluir-conta.html">Excluir conta</a>
       </div>
     </footer>
   );
