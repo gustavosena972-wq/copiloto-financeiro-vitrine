@@ -1,4 +1,4 @@
-name: Deploy static vitrine
+name: Deploy React vitrine
 
 on:
   push:
@@ -21,13 +21,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Prepare Pages
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build React
+        run: npm run build
+
+      - name: Preserve static pages
         run: |
-          mkdir -p dist
-          cp index.html style.css dist/
-          cp -f *.html dist/ 2>/dev/null || true
-          cp -f *.css dist/ 2>/dev/null || true
-          cp -f robots.txt lms.txt sitemap.xml dist/ 2>/dev/null || true
+          cp -f planos.html recursos.html seguranca.html sobre.html perguntas-frequentes.html privacidade.html termos.html excluir-conta.html app.html app-por-dentro.html robots.txt lms.txt sitemap.xml favicon.svg og-image.svg dist/ 2>/dev/null || true
+          cp -f legal.css dist/ 2>/dev/null || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
